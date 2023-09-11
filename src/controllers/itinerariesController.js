@@ -30,10 +30,10 @@ const getItinerary = async (req, res)=> {
   }  
 }
 
-const getItineraryByCity = async (req, res)=> {
+const getItinerariesByCity = async (req, res)=> {
   try {
-    let {id} = req.params
-    let cityFound = await City.findById(id)
+    let {cityId} = req.params
+    let cityFound = await City.findById(cityId)
 
     if (!cityFound) {
       return res.status(404).json({ message: "City not found" });
@@ -43,7 +43,7 @@ const getItineraryByCity = async (req, res)=> {
 
     res.status(200).json({
       message: "Itineraries found successfully",
-      itinerary: itineraryFound})
+      itineraries: itineraryFound})
   }catch(err) {
     res.status(500).json({message: err})
   }  
@@ -95,4 +95,4 @@ const updateItinerary = async (req, res)=> {
   }
 }
 
-module.exports = { getItineraries, getItinerary, getItineraryByCity, addItinerary, deleteItinerary, updateItinerary}
+module.exports = { getItineraries, getItinerary, getItinerariesByCity, addItinerary, deleteItinerary, updateItinerary}
