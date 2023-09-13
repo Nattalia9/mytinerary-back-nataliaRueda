@@ -11,18 +11,18 @@ const userSchema = Joi.object({
     'string.empty': 'Please enter your last name',
     'any.required': 'Please enter your last name'
   }),
-  email: Joi.string().email().min(6).max(20).required().messages({
+  email: Joi.string().email().min(6).max(60).required().messages({
     'string.email': 'Please enter an valid email',
     'string.min': 'email must be at least 6 characters',
-    'string.max': 'email must be at most 20 characters',
+    'string.max': 'email must be at most 60 characters',
     'string.empty': 'Please enter your email',
     'any.required': 'Please enter your email'
   }),
-  password: Joi.string().alphanum().min(5).max(15).required().messages({
+  password: Joi.string().alphanum().min(5).max(60).required().messages({
     'string.password': 'Please enter an valid password',
     'string.alphanum': 'Please enter an valid password',
     'string.min': 'password must be at least 5 characters',
-    'string.max': 'password must be at most 15 characters',
+    'string.max': 'password must be at most 60 characters',
     'string.empty': 'Please enter your password',
     'any.required': 'Please enter your password'
   }),
@@ -34,23 +34,23 @@ const userSchema = Joi.object({
   userLocation: Joi.string().required().messages({
     'string.userLocation': 'Please enter a valid location country',
     'string.empty': 'Please enter your country of location',
-    'any.required': 'Please enter your country of location'
+    'string.required': 'Please enter your country of location'
   })
 })
 
 const userSchemaLogin = Joi.object({
-  email: Joi.string().email().min(6).max(20).required().messages({
+  email: Joi.string().email().min(6).max(60).required().messages({
     'string.email': 'Please enter an valid email',
     'string.min': 'email must be at least 6 characters',
-    'string.max': 'email must be at most 20 characters',
+    'string.max': 'email must be at most 60 characters',
     'string.empty': 'Please enter your email',
     'any.required': 'Please enter your email'
   }),
-  password: Joi.string().alphanum().min(5).max(15).required().messages({
+  password: Joi.string().alphanum().min(5).max(60).required().messages({
     'string.password': 'Please enter an valid password',
     'string.alphanum': 'Please enter an valid password',
     'string.min': 'password must be at least 5 characters',
-    'string.max': 'password must be at most 15 characters',
+    'string.max': 'password must be at most 60 characters',
     'string.empty': 'Please enter your password',
     'any.required': 'Please enter your password'
   }),

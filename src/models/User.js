@@ -22,8 +22,8 @@ const schemaUser = new Schema( {
     required: true, 
   },
   userLocation: {
-    type: String,
-    required: true, 
+    type: String, 
+    required: true,
   }
 })
 
